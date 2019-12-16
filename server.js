@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 require('dotenv').config();
 
 // create express app
@@ -10,6 +11,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
+
+//enable cors
+app.use(cors())
 
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
