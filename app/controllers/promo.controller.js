@@ -12,7 +12,7 @@ exports.create = (req, res) => {
     // Create a promo
     const promo = new Promo({
         judul: req.body.judul || "Untitled promo",
-        gambar: req.body.gambar,
+        link_gambar: req.body.link_gambar,
         deskripsi: req.body.deskripsi,
         kode_promo: req.body.kode_promo,
         diskon: req.body.diskon
@@ -75,7 +75,7 @@ exports.update = (req, res) => {
     // Find promo and update it with the request body
     Promo.findByIdAndUpdate(req.params.promoId, {
         judul: req.body.judul || "Untitled promo",
-        gambar: req.body.gambar,
+        link_gambar: req.body.link_gambar,
         deskripsi: req.body.deskripsi,
         kode_promo: req.body.kode_promo,
         diskon: req.body.diskon

@@ -13,7 +13,8 @@ exports.create = (req, res) => {
     const news = new News({
         judul: req.body.judul || "Untitled news",
         subjudul: req.body.subjudul,
-        deskripsi: req.body.deskripsi
+        link_gambar: req.body.link_gambar,
+        deskripsi: req.body.deskripsi        
     });
 
     // Save news in the database
@@ -74,7 +75,8 @@ exports.update = (req, res) => {
     News.findByIdAndUpdate(req.params.newsId, {
         judul: req.body.judul || "Untitled news",
         subjudul: req.body.subjudul,
-        deskripsi: req.body.deskripsi
+        link_gambar: req.body.link_gambar,
+        deskripsi: req.body.deskripsi  
     }, {new: true})
     .then(news => {
         if(!news) {
