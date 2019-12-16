@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const PromoSchema = mongoose.Schema({
     judul: String,
-    gambar: String,
+    link_gambar: String,
     deskripsi: String,
     kode_promo: String,
     diskon: Number
